@@ -1,4 +1,4 @@
-// @ts-check
+﻿// @ts-check
 
 /**
  * @template T
@@ -103,6 +103,32 @@ function setAlert($container, context, message) {
  * @param {BuildingInfo[] | ConferenceRoomInfo[]} data
  */
 function setResults($resultsContainer, data) {
-    setAlert($resultsContainer, "success", "Success!");
-    $resultsContainer.append(`<pre>${JSON.stringify(data, null, 2)}</pre>`);
+    $resultsContainer.empty();
+    const $table = $("<table class='table table-striped'></table>");
+    $resultsContainer.append($table);
+    const $thead = $("<thead></thead>");
+    $table.append($thead);
+    const $tbody = $("<tbody></tbody>");
+    $table.append($tbody);
+
+    const $tr = $("<tr></tr>");
+    $thead.append($tr);
+    for (const key in data[0]) {
+        if (data[0].hasOwnProperty(key)) {
+            const $th = $(`<th>${key}</th>`);
+            $tr.append($th);
+        }
+    }
+
+    for (const item of data) {
+        const $tr = $("<tr></tr>");
+        $tbody.append($tr);
+        for (const key in item) {
+            if (item.hasOwnProperty(key)) {
+                // @ts-ignore
+                const $td = $(`<td>${item[key]}</td>`);
+                $tr.append($td);
+            }
+        }
+    }
 }

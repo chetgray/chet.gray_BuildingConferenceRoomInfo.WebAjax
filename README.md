@@ -15,23 +15,23 @@ Conference Room Information
 > - [x] It should have 2 sections.
 >   - [x] The Building section should allow you to search by Building
 >     Name and get details for that building.
->     - [ ] Once found, it should display the following details:
->       - [ ] Building Name
->       - [ ] Building Address - Street
->       - [ ] Building Address - City
->       - [ ] Building Address - State
->       - [ ] Building Address - Zip
->       - [ ] Building Address - Country
->       - [ ] Build Main Phone Number
->       - [ ] Number of Floors
->       - [ ] Number of Conference Rooms
+>     - [x] Once found, it should display the following details:
+>       - [x] Building Name
+>       - [x] Building Address - Street
+>       - [x] Building Address - City
+>       - [x] Building Address - State
+>       - [x] Building Address - Zip
+>       - [x] Building Address - Country
+>       - [x] Build Main Phone Number
+>       - [x] Number of Floors
+>       - [x] Number of Conference Rooms
 >   - [x] The Conference Room section should allow you to search by
 >     Conference Room Name and get details for that conference room.
->     - [ ] Once found, it should display the following details:
->       - [ ] Conference Room Name
->       - [ ] Conference Room Building
->       - [ ] Conference Room Phone Number
->       - [ ] Conference Room - A/V Capable (true / false)
->       - [ ] Conference Room Capacity
+>     - [x] Once found, it should display the following details:
+>       - [x] Conference Room Name
+>       - [x] Conference Room Building
+>       - [x] Conference Room Phone Number
+>       - [x] Conference Room - A/V Capable (true / false)
+>       - [x] Conference Room Capacity
 > - [x] Both sections should operate independently of one another.
 > - [x] There should be no full page refreshes.
