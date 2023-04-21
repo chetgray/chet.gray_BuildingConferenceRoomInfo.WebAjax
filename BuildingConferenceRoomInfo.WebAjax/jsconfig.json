@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "checkJs": true,
+        "target": "ES2015",
+        "strict": true,
+    },
+    "exclude": [
+        "Scripts/bootstrap*",
+        "Scripts/jquery*",
+        "Scripts/modernizr*"
+    ],
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "bootstrap",
+            "jquery",
+            "jqueryui",
+        ]
+    }
+}

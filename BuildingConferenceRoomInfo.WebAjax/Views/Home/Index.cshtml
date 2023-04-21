@@ -1,6 +1,32 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Building and Conference Room Information";
+}
+
+@section scripts {
+    @Scripts.Render("~/bundles/index")
 }
 
 <main>
+    <h1>@ViewBag.Title</h1>
+    <hr />
+    <section>
+        <h2>Search for Buildings by Name</h2>
+        <div>
+            <input type="text" id="buildingName" placeholder="Building Name" />
+            <button id="buildingSearch">Search</button>
+        </div>
+        <div id="buildingResults">
+        </div>
+    </section>
+    <hr />
+    <section>
+        <h2>Search for Conference Rooms by Name</h2>
+        <div>
+            <input type="text" id="conferenceRoomName" placeholder="Conference Room Name" />
+            <button id="conferenceRoomSearch">Search</button>
+        </div>
+        <div id="conferenceRoomResults">
+        </div>
+    </section>
+    <hr />
 </main>

@@ -9,11 +9,11 @@ Conference Room Information
 > Building and Conference Room database (US #211912). Here's how it
 > should work:
 >
-> - [ ] The site should be one page.
-> - [ ] It should have a header saying, "Building and Conference Room
+> - [x] The site should be one page.
+> - [x] It should have a header saying, "Building and Conference Room
 >   Information".
-> - [ ] It should have 2 sections.
->   - [ ] The Building section should allow you to search by Building
+> - [x] It should have 2 sections.
+>   - [x] The Building section should allow you to search by Building
 >     Name and get details for that building.
 >     - [ ] Once found, it should display the following details:
 >       - [ ] Building Name
@@ -25,7 +25,7 @@ Conference Room Information
 >       - [ ] Build Main Phone Number
 >       - [ ] Number of Floors
 >       - [ ] Number of Conference Rooms
->   - [ ] The Conference Room section should allow you to search by
+>   - [x] The Conference Room section should allow you to search by
 >     Conference Room Name and get details for that conference room.
 >     - [ ] Once found, it should display the following details:
 >       - [ ] Conference Room Name
@@ -33,5 +33,5 @@ Conference Room Information
 >       - [ ] Conference Room Phone Number
 >       - [ ] Conference Room - A/V Capable (true / false)
 >       - [ ] Conference Room Capacity
-> - [ ] Both sections should operate independently of one another.
-> - [ ] There should be no full page refreshes.
+> - [x] Both sections should operate independently of one another.
+> - [x] There should be no full page refreshes.

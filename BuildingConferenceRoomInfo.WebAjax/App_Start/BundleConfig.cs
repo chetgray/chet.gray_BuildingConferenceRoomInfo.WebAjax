@@ -54,6 +54,8 @@ namespace BuildingConferenceRoomInfo.WebAjax
                     "~/Content/Site.css"
                 )
             );
+
+            bundles.Add(new ScriptBundle("~/bundles/index").Include("~/Scripts/index.js"));
         }
     }
 }
