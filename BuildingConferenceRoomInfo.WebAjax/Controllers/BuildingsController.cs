@@ -1,9 +1,12 @@
 ﻿using System.Collections.Generic;
+using System.Net;
 using System.Web.Mvc;
 
 using BuildingConferenceRoomInfo.Business.BLLs;
 using BuildingConferenceRoomInfo.Business.Models;
 using BuildingConferenceRoomInfo.WebAjax.ViewModels;
+
+using Newtonsoft.Json;
 
 namespace BuildingConferenceRoomInfo.WebAjax.Controllers
 {
@@ -18,15 +21,63 @@ namespace BuildingConferenceRoomInfo.WebAjax.Controllers
         }
 
         // GET api/Buildings/List
+        [HttpGet]
         public ActionResult List()
         {
-            throw new System.NotImplementedException();
+            ApiResultViewModel result = new ApiResultViewModel();
+            try
+            {
+                IEnumerable<BuildingModel> buildings = _bll.GetAll();
+                result.Data = ConvertToInfoViewModelList(buildings);
+                result.Context = BootstrapContext.success;
+                result.Message = "Success";
+            }
+            catch (System.Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                result.Context = BootstrapContext.danger;
+                result.Message = ex.Message;
+                result.Data = null;
+            }
+            ContentResult content = Content(
+                JsonConvert.SerializeObject(result),
+                "application/json"
+            );
+            return content;
         }
 
         // GET api/Buildings/ListByName?name={name}
+        [HttpGet]
         public ActionResult ListByName(string name)
         {
-            throw new System.NotImplementedException();
+            ApiResultViewModel result = new ApiResultViewModel();
+            try
+            {
+                IEnumerable<BuildingModel> allBuildings = _bll.GetAll();
+                IList<BuildingModel> matchingBuildings = new List<BuildingModel>();
+                foreach (BuildingModel building in allBuildings)
+                {
+                    if (building.Name.Contains(name))
+                    {
+                        matchingBuildings.Add(building);
+                    }
+                }
+                result.Data = ConvertToInfoViewModelList(matchingBuildings);
+                result.Context = BootstrapContext.success;
+                result.Message = "Success";
+            }
+            catch (System.Exception ex)
+            {
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                result.Context = BootstrapContext.danger;
+                result.Message = ex.Message;
+                result.Data = null;
+            }
+            ContentResult content = Content(
+                JsonConvert.SerializeObject(result),
+                "application/json"
+            );
+            return content;
         }
 
         private BuildingInfoViewModel ConvertToInfoViewModel(BuildingModel model)
