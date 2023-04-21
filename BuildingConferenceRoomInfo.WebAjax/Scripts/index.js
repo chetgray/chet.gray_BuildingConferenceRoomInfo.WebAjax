@@ -31,7 +31,7 @@
  */
 
 $(function () {
-    $("#buildingSearch").on("click", function () {
+    function handleBuildingSearch() {
         const buildingName = /** @type {string} */ ($("#buildingName").val());
         const $resultsContainer = $("#buildingResults");
         $.ajax({
@@ -57,9 +57,16 @@ $(function () {
                     `Request failed: ${textStatus} ${jqXHR.responseText}`
                 );
             });
+    }
+
+    $("#buildingSearch").on("click", handleBuildingSearch);
+    $("#buildingName").on("keypress", function (e) {
+        if (e.which === 13) {
+            handleBuildingSearch();
+        }
     });
 
-    $("#conferenceRoomSearch").on("click", function () {
+    function handleConferenceRoomSearch() {
         const conferenceRoomName = /** @type {string} */ ($("#conferenceRoomName").val());
         const $resultsContainer = $("#conferenceRoomResults");
         $.ajax({
@@ -85,6 +92,13 @@ $(function () {
                     `Request failed: ${textStatus} ${jqXHR.responseText}`
                 );
             });
+    }
+
+    $("#conferenceRoomSearch").on("click", handleConferenceRoomSearch);
+    $("#conferenceRoomName").on("keypress", function (e) {
+        if (e.which === 13) {
+            handleConferenceRoomSearch();
+        }
     });
 });
 
